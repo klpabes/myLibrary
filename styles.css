@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+:root {
+  --background: #303134;
+  --text-color: #e8eaed;
+  --card-color: #394457;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--background);
+  color: var(--text-color);
+}
+
+header {
+  font-size: 2.1rem;
+  text-align: center;
+  margin: 1.5rem;
+}
+
+header > h1 {
+  letter-spacing: 0.5rem;
+}
+
+button {
+  width: 250px;
+  padding: 0.2rem;
+  border-radius: 10px;
+}
+
+header > button {
+  margin: 1rem;
+  font-size: 2rem;
+}
+
+.book-container {
+  margin: 2rem;
+}
+
+.book-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  list-style-type: none;
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  background-color: var(--card-color);
+
+  border: none;
+  border-radius: 15px;
+  height: 300px;
+  width: 250px;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+.card > h4 {
+  font-size: 1.5rem;
+}
+
+.card > button {
+  font-size: 1.2rem;
+  width: 150px;
+}
