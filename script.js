@@ -85,5 +85,3 @@ function removeBook(item) {
   displayBook(myLibrary);
   closeForm();
 }
-
-function changeColor(index, books = myLibrary) {}
