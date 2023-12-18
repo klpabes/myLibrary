@@ -49,13 +49,13 @@ header > button {
 
 .book-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 
   list-style-type: none;
   width: 100%;
 
   margin: 0;
-  row-gap: 2rem;
+  gap: 2rem;
   padding: 2rem;
 }
 
@@ -131,7 +131,7 @@ input:focus {
 }
 
 .hidden {
-  /* display: none; */
+  display: none;
 }
 
 .overlay {
@@ -143,4 +143,9 @@ input:focus {
   background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(3px);
   z-index: 5;
+}
+
+.read {
+  background-color: green;
+  color: var(--white);
 }
