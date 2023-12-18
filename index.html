@@ -13,7 +13,7 @@
       <button class="btn-add">Add Book</button>
     </header>
     <div class="book-container">
-      <div class="card">
+      <!-- <div class="card">
         <h4>Title:</h4>
         <span>Game of Thrones</span>
         <h4>Author:</h4>
@@ -22,17 +22,22 @@
         <span>694</span>
         <button class="btn-read">Read</button>
         <button class="btn-remove">Remove</button>
-      </div>
+      </div> -->
     </div>
-    <form class="form hidden">
+    <form class="form hidden" method="post" action="">
       <label for="title">Title:</label>
-      <input type="text" id="title" name="title" />
+      <input type="text" id="title" name="title" required />
       <label for="author">Author:</label>
       <input type="text" id="author" name="author" />
       <label for="pages">Pages:</label>
-      <input type="number" id="pages" name="pages" />
+      <input
+        type="number"
+        id="pages"
+        name="pages"
+        placeholder="Should be greater than 0"
+      />
       <label for="read">Read:</label>
-      <input type="checkbox" id="read" name="read" />
+      <input type="checkbox" id="read" name="read" value="true" />
       <input type="submit" id="submit" value="Add Book" />
     </form>
     <div class="overlay hidden"></div>
