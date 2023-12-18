@@ -5,6 +5,8 @@ const overlay = document.querySelector(".overlay");
 const bookContainer = document.querySelector(".book-container");
 const btnRead = document.querySelectorAll(".btn-read");
 
+const myLibrary = [];
+
 const openForm = function () {
   formAddBook.classList.remove("hidden");
   overlay.classList.remove("hidden");
@@ -28,7 +30,15 @@ function Book(title, author, pages, read) {
   this.pages = pages;
   this.read = read;
 }
-const myLibrary = [];
+
+Book.prototype.changeRead = function () {
+  this.read = !this.read;
+};
+
+function changeRead(index) {
+  myLibrary[index].changeRead();
+  displayBook(myLibrary);
+}
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -60,7 +70,7 @@ function displayBook(arr) {
       <span>${book.author}</span>
       <h4>Pages:</h4>
       <span>${book.pages}</span>
-      <button onclick='changeColor(${index})' class="btn-read ${
+      <button onclick='changeRead(${index})' class="btn-read ${
         book.read ? "read" : ""
       }">Read</button>
       <button onclick="removeBook(${index})" class="btn-remove">Remove</button>
@@ -76,7 +86,4 @@ function removeBook(item) {
   closeForm();
 }
 
-function changeColor(index, books = myLibrary) {
-  books[index].read = !books[index].read;
-  displayBook(books);
-}
+function changeColor(index, books = myLibrary) {}
