@@ -24,17 +24,6 @@ let bookTitle, bookAuthor, bookPages, bookRead;
 
 const form = document.querySelector(".form");
 
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-}
-
-Book.prototype.changeRead = function () {
-  this.read = !this.read;
-};
-
 function changeRead(index) {
   myLibrary[index].changeRead();
   displayBook(myLibrary);
@@ -48,7 +37,7 @@ form.addEventListener("submit", function (e) {
   bookRead = document.getElementById("read").checked;
   // number of pages should be int and >0
   if (Number.isInteger(Number(bookPages)) && Number(bookPages) > 0) {
-    let newBook = new Book(bookTitle, bookAuthor, bookPages, bookRead);
+    let newBook = new Book(bookTitle, bookAuthor, bookPages, bookRead); //
     myLibrary.push(newBook);
     displayBook(myLibrary);
     this.reset(); //reset form
@@ -84,4 +73,16 @@ function removeBook(item) {
   bookContainer.innerHTML = "";
   displayBook(myLibrary);
   closeForm();
+}
+
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
+  changeRead() {
+    this.read = !this.read;
+  }
 }
